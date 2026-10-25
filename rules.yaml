@@ -1,0 +1,55 @@
+# Priority rules for Patient-to-Power Triage.
+#
+# EXAMPLE VALUES ONLY. These weights must be reviewed and approved by the
+# hospital's doctors before any real use. The software only advises; staff
+# make the final decision.
+
+# Device catalogue: power draw, internal battery, priority weight, and whether
+# losing power is immediately life-threatening.
+devices:
+  ventilator:      {kw: 0.25, battery_min: 30,  weight: 100, life_support: true}
+  incubator:       {kw: 0.60, battery_min: 0,   weight: 90,  life_support: true}
+  o2_concentrator: {kw: 0.35, battery_min: 0,   weight: 80,  life_support: true}
+  inotrope_pump:   {kw: 0.03, battery_min: 120, weight: 70,  life_support: true}
+  dialysis:        {kw: 1.50, battery_min: 0,   weight: 60,  life_support: false}
+  suction:         {kw: 0.20, battery_min: 0,   weight: 40,  life_support: false}
+  monitor:         {kw: 0.06, battery_min: 60,  weight: 20,  life_support: false}
+  none:            {kw: 0.00, battery_min: 0,   weight: 2,   life_support: false}
+
+# A device type the data does not recognise is treated as life support until
+# a clinician confirms otherwise (safe default).
+unknown_device: {kw: 0.30, battery_min: 0, weight: 100, life_support: true}
+
+# Planner settings.
+planner:
+  capacity_margin: 0.95        # never load the generator above 95% of rating
+  fuel_reserve: 0.10           # keep 10% extra fuel beyond the hours needed
+  diesel_cost_per_kw: 0.1      # weight units per kW: small cost of burning diesel at all
+  fuel_over_penalty_per_kw: 1.5  # weight units per kW above the fuel-safe load
+  move_penalty: 5              # weight units per patient move
+  move_min_weight: 40          # only patients at or above this weight are considered for moves
+  same_floor_move_min: 10      # transport time, minutes
+  cross_floor_move_min: 20
+  time_limit_s: 5
+
+# Fixed department list used by the baseline (what hospitals do today):
+# circuits are kept in this order until the generator is full.
+baseline_order:
+  - fire
+  - OR
+  - ICU
+  - NICU
+  - ER
+  - oxygen
+  - dialysis
+  - cold_chain
+  - pumps
+  - lab
+  - ward
+  - radiology
+  - kitchen
+  - lift
+  - opd
+  - corridor
+  - laundry
+  - admin

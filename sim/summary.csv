@@ -1,0 +1,5 @@
+,ls_patient_minutes_without_power,ls_patient_minutes_without_power,ls_unpowered_at_start,ls_unpowered_at_start,emergency_evacuations,emergency_evacuations,stranded_no_lift,stranded_no_lift,blackout_min,blackout_min,load_kw,load_kw,burn_lph,burn_lph,runtime_per_tank_h,runtime_per_tank_h,litres,litres,co2_kg,co2_kg,diesel_rs,diesel_rs,planned_moves,planned_moves
+,sum,mean,sum,mean,sum,mean,sum,mean,sum,mean,sum,mean,sum,mean,sum,mean,sum,mean,sum,mean,sum,mean,sum,mean
+method,,,,,,,,,,,,,,,,,,,,,,,,
+Fixed list (today),517277.0,10345.5,241,4.8,1588,31.8,217,4.3,9677.1,193.5,16354.5,327.1,5446.5,108.9,529.6,10.6,54613.5,1092.3,146364.2,2927.3,4915214.3,98304.3,0,0.0
+Patient-aware planner,298057.2,5961.1,45,0.9,1386,27.7,45,0.9,7028.8,140.6,14052.7,281.1,4880.3,97.6,594.4,11.9,52524.5,1050.5,140765.7,2815.3,4727205.1,94544.1,33,0.7
