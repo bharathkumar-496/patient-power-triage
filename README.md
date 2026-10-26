@@ -2,6 +2,10 @@
 
 *Power should reach the patient who can't wait.*
 
+> 🏆 **First prize — ENERGY SIMTECH'26, Track 3: Open Innovation**
+
+**Live app:** https://site-nu-khaki-32.vercel.app
+
 A software advisor for hospitals on backup power. It links every patient,
 device, room and power circuit. When the generator can't carry everything, it
 tells staff which circuits to keep, which to cut, who to move, which
